@@ -45,10 +45,10 @@
 
 <body>
     <div class="dashboard">
-        <div class="welcome-note" id="welcomeNote">Welcome to our Dashboard!</div>
+        <div class="welcome-note" id="welcomeNote">Welcome to my Dashboard!</div>
 		
 		<form action="" method="post">
-			<input type="text" id="search" name="search" class="search-bar" placeholder="Search...">
+			<input type="text" id="search" name="search" class="search-bar" placeholder="Search location...">
 			<br>
 			<label for="minBed">Minimum number of bedrooms</label> 
 			<select name="minBed" id="minBed">
