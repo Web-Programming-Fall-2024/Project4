@@ -46,7 +46,7 @@
 
 <body>
     <div class="dashboard">
-        <div class="welcome-note" id="welcomeNote">Welcome to our Dashboard</div>
+        <div class="welcome-note" id="welcomeNote">Welcome to our Dashboard!</div>
 		
         <!-- <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
         <button onclick="search()">Search</button> -->
@@ -117,6 +117,7 @@
 		</form>
         <div class="search-results" id="searchResults">
 			<?php
+
                 $db = getDB();
                 if($searchAvailable == 1 && $wishFilter == 1)
                 {
@@ -180,10 +181,6 @@
 								<h3>Sold by <?= $seller; ?></h3>
 								<p>Location: <?= $addr; ?></p>
 								<p>Price: $<?= $price; ?></p>
-								<!-- The stuff in here should be saved for when the user clicks on the card
-								<p>//$beds  bedrooms, //$baths bathrooms, =//$garage garage</p>
-								<p>Area: //$area square feet</p>
-								Implement wishlist later -->
 					</div>
 							<?php }
 						}
@@ -195,15 +192,15 @@
 						<h3>Sold by <?= $seller; ?></h3>
 						<p>Location: <?= $addr; ?></p>
 						<p>Price: $<?= $price; ?></p>
-						<!-- The stuff in here should be saved for when the user clicks on the card
-						<p>//$beds  bedrooms, //$baths bathrooms, =//$garage garage</p>
-						<p>Area: //$area square feet</p>
-						Implement wishlist later -->
 					</div>
-				<?php }
+
+					<?php 
+					}
 				}
 				$db->close();
+
 			?>
+			
         </div>
 		<button id="logout"><a href="./session_destroy_buyer.php">Logout</a></button>
     </div>

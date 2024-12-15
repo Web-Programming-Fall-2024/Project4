@@ -1,21 +1,11 @@
 <?php
 
 function getHostUsername() {
-    // codd, our deployment server, uses user names as credentials for mysql, and also as subfolder mounts for apache
-    // However, php runs as the apache user, not the host's
-    // Since each group member must deploy, this function attempts to get the username from the URL you visit.
-    // Potentially dangerous (?)
     return substr(explode("/", $_SERVER["SCRIPT_NAME"])[1], 1);
 }
 
 function getDB() {
-    // Use this to return a mysqli connection
     $name = getHostUsername();
-    /*$host = "localhost";
-    $user = $name;
-    $pass = $name;
-    $dbname = $name;
-    Centralizing it to Bach's database*/
     $host = "localhost";
     $user = "nnguyen177";
     $pass = "nnguyen177";
@@ -25,8 +15,8 @@ function getDB() {
 }
 
 function initTables() {
-    // Creates the neccessary tables if they don't exist.
     $db = getDB();
+
     $db->query(
         "CREATE TABLE IF NOT EXISTS User(
             username VARCHAR(100) NOT NULL PRIMARY KEY,
@@ -61,18 +51,13 @@ function initTables() {
         )"
     );
 
-
     $db->close();
 }
 
-
-// call initTables(); on root
-// TODO: CRUD for card, error handling, CRUD for user
-
 function hashPass($password) {
-    // accepts plaintext password, returns bcrypt hashed password
     return password_hash($password, PASSWORD_BCRYPT);
 }
+
 function verifyPass($password, $email) {
     $db = getDB();
     $sql = "SELECT pass FROM User WHERE email=?";
@@ -83,12 +68,11 @@ function verifyPass($password, $email) {
     $result = $intermediate->fetch_assoc();
     $internalPass = $result["pass"];
     $db->close();
-    // accepts password, returns true if input and stored passwords match
+
     return password_verify($password, $internalPass);
 }
 
 function createUser() {
-    // Take from the superglobal $_POST and create a row in User for the entered information
     $db = getDB();
 	$registerName =$_POST["username"];
 	$registerEmail = $_POST["email"];
@@ -102,8 +86,7 @@ function createUser() {
 	$db->close();
 }
 
-function createCard()
-{//Change value so we can manually add new properties later for testing
+function createCard() {
     $db = getDB();
     $seller = 'seller';
     $addr = "2013 Random Street, Random City, Random State";
@@ -174,4 +157,5 @@ function getWishlistByEmail($email) {
     $db->close();
     return $out;
 }
+
 ?>
