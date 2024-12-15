@@ -21,7 +21,6 @@
     {
         $searchAvailable = 0;
     }
-	
 	if(isset($_POST["wishFilter"]))
     {
         $wishFilter = 1;
@@ -200,7 +199,7 @@
 				$db->close();
 
 			?>
-			
+
         </div>
 		<button id="logout"><a href="./session_destroy_buyer.php">Logout</a></button>
     </div>

@@ -92,7 +92,7 @@ function createCard() {
     $addr = "2013 Random Street, Random City, Random State";
     $age = 5;
     $price = 350000;
-    $img = "property-image.jpg";
+    $img = "img/property-image1.png";
     $beds = 3;
     $baths = 2;
     $garage = 1;

@@ -63,7 +63,7 @@
 
     </form>
     
-    <p class = "center"><a href="homepage.html">Go to Homepage</a></p>
+    <p class = "center"><a href="homepage.html">Return to Homepage</a></p>
     <p class = "center"><a href="login.php">Go to Log In</a></p>
 
   </div>

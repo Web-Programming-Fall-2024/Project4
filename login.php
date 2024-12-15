@@ -39,7 +39,7 @@
 
 	<br> 
 
-  <p class = "center"><a href="homepage.html">Go to Homepage</a></p>
+  <p class = "center"><a href="homepage.html">Return to Homepage</a></p>
 	<p class = "center"><a href="user_registration.php">Go to Registration</a></p>
 
   </div>
