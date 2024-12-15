@@ -86,46 +86,37 @@ function createUser() {
 	$db->close();
 }
 
-function createCard() {
+function createCard($seller, $addr, $age, $price, $img, $beds, $baths, $garage, $areaL, $areaW) {
     $db = getDB();
-    $seller = 'seller';
-    $addr = "2013 Random Street, Random City, Random State";
-    $age = 5;
-    $price = 350000;
-    $img = "img/property-image1.png";
-    $beds = 3;
-    $baths = 2;
-    $garage = 1;
-    $areaL = 60;
-    $areaW = 40;
-    $db->query(
-        "INSERT INTO Card
-        (   
-            seller,
-            addr,
-            age,
-            price,
-            img,
-            beds,
-            baths,
-            garage,
-            areaL,
-            areaW
-        )
-        VALUES
-        (
-            '$seller',
-            '$addr',
-            '$age',
-            '$price',
-            '$img',
-            '$beds',
-            '$baths',
-            '$garage',
-            '$areaL',
-            '$areaW'
-        )"
+
+    $sql = "INSERT INTO Card (seller, addr, age, price, img, beds, baths, garage, areaL, areaW)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = $db->prepare($sql);
+
+    if (!$stmt) {
+        die("Statement preparation failed: " . $db->error);
+    }
+
+    $stmt->bind_param(
+        "ssidsiiddi",
+        $seller,
+        $addr,
+        $age,
+        $price,
+        $img,
+        $beds,
+        $baths,
+        $garage,
+        $areaL,
+        $areaW
     );
+
+    if (!$stmt->execute()) {
+        die("Execution failed: " . $stmt->error);
+    }
+
+    $stmt->close();
     $db->close();
 }
 

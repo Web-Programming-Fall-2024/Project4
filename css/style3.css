@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f2f9ff;
-  background-image: url("img/property.avif");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -14,7 +13,7 @@ body {
 }
 
 .dashboard {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 20px auto;
   padding: 2rem;
   background-color: #fff5d7;
@@ -39,17 +38,41 @@ body {
   margin-bottom: 20px;
 }
 
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  justify-content: center;
+  padding: 10px;
+  background-color: #fff5d7;
+  border: 1px solid #e195ab;
+  border-radius: 10px;
+}
+
 .property-card {
   border: 1px solid #e195ab;
   border-radius: 10px;
-  margin: 10px;
   padding: 15px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   background-color: #ffcce1;
-  width: 200px;
+  width: 220px;
+  height: 400px;
   box-sizing: border-box;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.property-card img {
+  max-width: 100%;
+  max-height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .property-card:hover {

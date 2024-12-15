@@ -15,10 +15,14 @@ session_start();
 </head>
 
 <body>
-    <div class="error-container">
-        <h2>Log In Error</h2>
-        <p><?= isset($_SESSION['error']) ? htmlspecialchars($_SESSION['error']) : "An unknown error occurred."; ?></p>
-        <a href="./session_destroy.php" class="btn">Return to Main Page</a>
+    <div class="dashboard error-container">
+        <h2 class="welcome-note">Log In Error</h2>
+        
+        <p>
+            <?= isset($_SESSION['error']) ? htmlspecialchars($_SESSION['error']) : "An unknown error occurred."; ?>
+        </p>
+
+        <button id="logout"><a href="./session_destroy.php">Return to Log In</a></button>
     </div>
 </body>
 

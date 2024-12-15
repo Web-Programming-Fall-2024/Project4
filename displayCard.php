@@ -36,10 +36,13 @@
             "<p>" . $card["garage"] . "-car garage</p>" .
             "<p>" . $card["areaL"] . " ft. by " . $card["areaW"] . " ft.</p>".
             "<p>Total area: " . $card["areaL"] * $card["areaW"] . " sq ft. <p>" ?>
+
             <div>
-            <button type="button" onclick="addToWishlist()">Add to Wishlist</button>
+            <button id="logout" onclick="addToWishlist()">Add to Wishlist</button>
             </div>
-            <p class = "center"><a href="buyer.php">Back to Dashboard</a></p>
+
+            <button id="logout"><a href="buyer.php">Return to Dashboard</a></button>
+
             <?=
         "</div>";
     ?>
