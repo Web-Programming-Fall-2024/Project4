@@ -6,10 +6,10 @@
 
 ## Materials:
 
-- [Website]()
-- [Proposal]()
-- [PowerPoint]()
-- [Video]()
+- [Website](https://codd.cs.gsu.edu/~nnguyen177/PropertyConnect/homepage.html)
+- [Proposal](https://drive.google.com/file/d/19GdcZtTvNu4qZPv0xrS3ANqRaR4zPyML/view?usp=sharing)
+- [PowerPoint](https://docs.google.com/presentation/d/1KUZSi3L3Cpfd72Ze6e036Lp0SL67EJ5m/edit?usp=sharing&ouid=115868471783120857845&rtpof=true&sd=true)
+- [Video](https://drive.google.com/file/d/12UwtgtDeV6hEbNTHz3VNMSww2l51-dMg/view?usp=sharing)
 
 ## Project Summary:
 
